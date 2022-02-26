@@ -1,0 +1,12 @@
+FROM debian:bullseye-slim
+
+# make sure you install supervisord
+RUN apt-get -qq update > /dev/null && apt-get -qq upgrade -y > /dev/null; \
+    apt-get -qq install -y supervisor  > /dev/null;
+
+RUN apt-get -qq install -y nginx php-fpm php-mysql php-pdo-mysql
+
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY default /etc/nginx/sites-enabled/
+
+CMD ["/usr/bin/supervisord"]
