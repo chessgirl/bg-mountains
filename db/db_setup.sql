@@ -1,0 +1,15 @@
+set names 'utf8';
+create database bulgaria character set utf8 collate utf8_general_ci;
+grant all on bulgaria.* to 'web_user'@'%' identified by 'Password1';
+use bulgaria;
+create table mountains (id int primary key auto_increment, peak_name varchar(50), height int);
+INSERT INTO mountains (peak_name, height) VALUES ('Мусала', 2925);
+INSERT INTO cities (city_name, population) VALUES ('Вихрен', 2914);
+INSERT INTO cities (city_name, population) VALUES ('Ботев', 2376);
+INSERT INTO cities (city_name, population) VALUES ('Черни връх', 2290);
+INSERT INTO cities (city_name, population) VALUES ('Руен', 2251);
+INSERT INTO cities (city_name, population) VALUES ('Гоцев връх', 2212);
+INSERT INTO cities (city_name, population) VALUES ('Голям Перелик', 2191);
+INSERT INTO cities (city_name, population) VALUES ('Радомир', 2029);
+INSERT INTO cities (city_name, population) VALUES ('Огреяк', 1924);
+INSERT INTO cities (city_name, population) VALUES ('Ильов връх', 1803);
